@@ -1,0 +1,30 @@
+name: Create tag
+
+on:
+  push:
+    branches:
+      - master
+jobs:
+  create_tag:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
+    steps:
+      - uses: actions/checkout@master
+        with:
+          persist-credentials: false
+      - name: Build files using ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Create tag
+        run: |
+          npm ci
+          npm run version
+          git push "https://${{ github.actor }}:${{ secrets.BOT_TOKEN }}@github.com/${{ github.repository }}.git" HEAD:master --follow-tags
+        env:
+          CI: true
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
