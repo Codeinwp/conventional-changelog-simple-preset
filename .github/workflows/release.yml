@@ -21,7 +21,7 @@ jobs:
       - name: Create tag
         run: |
           npm ci
-          npm run version
+          npm version
           git push "https://${{ github.actor }}:${{ secrets.BOT_TOKEN }}@github.com/${{ github.repository }}.git" HEAD:master --follow-tags
         env:
           CI: true
