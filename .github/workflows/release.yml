@@ -22,6 +22,8 @@ jobs:
       - name: Create tag
         run: |
           npm ci
+          git config --global user.email "marius+gitbot@themeisle.com"
+          git config --global user.name "themeisle[bot]"
           npm version patch -m "[skip ci] New version %s"
           git push "https://${{ github.actor }}:${{ secrets.BOT_TOKEN }}@github.com/${{ github.repository }}.git" HEAD:master --follow-tags
         env:
