@@ -12,6 +12,9 @@
     "simple",
     "preset"
   ],
+  "scripts": {
+    "postversion": " git add ."
+  },
   "files": [
     "conventional-changelog.js",
     "conventional-recommended-bump.js",
