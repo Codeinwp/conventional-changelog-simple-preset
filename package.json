@@ -1,6 +1,6 @@
 {
   "name": "conventional-changelog-simple-preset",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "conventional-changelog simple preset",
   "main": "index.js",
   "repository": {
