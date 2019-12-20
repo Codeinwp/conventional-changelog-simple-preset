@@ -56,7 +56,7 @@ function beautify(commitMessage, context) {
 function getWriterOpts() {
 	return {
 		transform: (commit, context) => {
-			let body = '> Things are getting better every day';
+			let body = '> Things are getting better every day. :rocket:';
 
 			if (commit.type !== 'release') {
 				return;
