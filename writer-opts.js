@@ -58,6 +58,7 @@ function getWriterOpts() {
 		transform: (commit, context) => {
 
 			if (commit.type !== 'release') {
+				commit.body = [];
 				return;
 			}
 
