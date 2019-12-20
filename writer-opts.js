@@ -56,14 +56,13 @@ function beautify(commitMessage, context) {
 function getWriterOpts() {
 	return {
 		transform: (commit, context) => {
-			let body = '> Things are getting better every day. :rocket:';
 
 			if (commit.type !== 'release') {
 				return;
 			}
 
 			if (typeof commit.body !== 'string' || commit.body.length < 5) {
-				commit.body = body;
+				commit.body = ['> Things are getting better every day. :rocket:'];
 				return commit;
 			}
 			let bodyLines = commit.body.split(/\r\n|\n|\r/);
