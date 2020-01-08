@@ -31,11 +31,11 @@ function beautify(commitMessage, context) {
 	let url = context.repository
 		? `${context.host}/${context.owner}/${context.repository}`
 		: context.repoUrl
+
 	if (url) {
 		url = `${url}/issues/`
 		// Issue URLs.
 		commitMessage = commitMessage.replace(/#([0-9]+)/g, (_, issue) => {
-			issues.push(issue)
 			return `[#${issue}](${url}${issue})`
 		})
 	}
@@ -49,7 +49,6 @@ function beautify(commitMessage, context) {
 			return `[@${username}](${context.host}/${username})`
 		})
 	}
-
 	return commitMessage
 }
 
@@ -61,13 +60,15 @@ function getWriterOpts() {
 				commit.body = [];
 				return;
 			}
-
+			if(commit.footer !== null){
+				commit.body = ( commit.body === null ) ?  ( commit.footer ) : ( "\n" + commit.footer );
+			}
 			if (typeof commit.body !== 'string' || commit.body.length < 5) {
-				commit.body = ['> Things are getting better every day. :rocket:'];
+				commit.body = ['> Things are getting better every day. 🚀'];
 				return commit;
 			}
 			let bodyLines = commit.body.split(/\r\n|\n|\r/);
-			bodyLines.map(line => beautify(line, context));
+			bodyLines = bodyLines.map(line => beautify(line, context));
 			commit.body = bodyLines;
 
 			return commit

@@ -7,6 +7,7 @@ module.exports = {
     'scope',
     'subject'
   ],
+  fieldPattern: null,
   noteKeywords: null,
   revertPattern: null,
   revertCorrespondence: []
