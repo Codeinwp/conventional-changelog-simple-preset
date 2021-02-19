@@ -9,6 +9,6 @@ module.exports = {
   ],
   fieldPattern: null,
   noteKeywords: null,
-  revertPattern: false,
+  revertPattern: /(?!)/,
   revertCorrespondence: []
 }
