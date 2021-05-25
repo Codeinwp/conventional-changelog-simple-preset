@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Codeinwpo/conventional-changelog-simple-preset.git"
+    "url": "https://github.com/Codeinwp/conventional-changelog-simple-preset.git"
   },
   "keywords": [
     "conventional-changelog",
@@ -30,7 +30,7 @@
   },
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Codeinwpo/conventional-changelog-simple-preset/issues"
+    "url": "https://github.com/Codeinwp/conventional-changelog-simple-preset/issues"
   },
   "dependencies": {
     "compare-func": "^1.3.1",
