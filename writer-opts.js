@@ -63,6 +63,10 @@ function getWriterOpts() {
 			if(commit.footer !== null){
 				commit.body = ( commit.body === null ) ?  ( commit.footer ) : ( "\n" + commit.footer );
 			}
+			
+			if (context.packageData.private && context.packageData.private === true) {
+				context.linkCompare = false;
+			}
 			if (typeof commit.body !== 'string' || commit.body.length < 5) {
 				commit.body = ['> Things are getting better every day. 🚀'];
 				return commit;
