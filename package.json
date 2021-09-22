@@ -1,7 +1,7 @@
 {
   "name": "conventional-changelog-simple-preset",
   "version": "1.0.17",
-  "description": "conventional-changelog simple preset",
+  "description": "conventional-changelog simple preset to create releases",
   "main": "index.js",
   "repository": {
     "type": "git",
