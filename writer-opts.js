@@ -49,6 +49,7 @@ function beautify(commitMessage, context) {
 			return `[@${username}](${context.host}/${username})`
 		})
 	}
+	commitMessage = commitMessage.replace(/"/g, '');
 	return commitMessage
 }
 
