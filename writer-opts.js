@@ -50,7 +50,7 @@ function beautify(commitMessage, context) {
 		})
 	}
 	commitMessage = commitMessage.replace(/"/g, '');
-	commitMessage = commitMessage.replace(/'/g, "\'");
+	commitMessage = commitMessage.replace(/'/g, "");
 	return commitMessage
 }
 
