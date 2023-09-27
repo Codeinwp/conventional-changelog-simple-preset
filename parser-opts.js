@@ -1,7 +1,7 @@
 'use strict'
 
 module.exports = {
-  headerPattern: /^(release)(?:\((.*)\))?: (.*)$/,
+  headerPattern: /^(release)(?:\((.*)\))?:(.*)$/,
   headerCorrespondence: [
     'type',
     'scope',
